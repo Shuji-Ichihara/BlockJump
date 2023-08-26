@@ -9,6 +9,13 @@
 /[Bb]uilds/
 /[Ll]ogs/
 /[Uu]ser[Ss]ettings/
+BlockJump/[Ll]ibrary/
+BlockJump/[Tt]emp/
+BlockJump/[Oo]bj/
+BlockJump/[Bb]uild/
+BlockJump/[Bb]uilds/
+BlockJump/[Ll]ogs/
+BlockJump/[Uu]ser[Ss]ettings/
 
 # MemoryCaptures can get excessive in size.
 # They also could contain extremely sensitive data
