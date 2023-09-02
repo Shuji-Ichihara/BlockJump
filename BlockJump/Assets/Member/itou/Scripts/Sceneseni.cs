@@ -6,29 +6,41 @@ using UnityEngine.SceneManagement;
 public class Sceneseni : MonoBehaviour
 {
     private int _sceneNumber = 0;
-    [SerializeField]
     private int _maxSceneNumber;
+    [SerializeField]
+    bool kari = false;
     // Start is called before the first frame update
     void Start()
     {
         DontDestroyOnLoad(this.gameObject);
+        _maxSceneNumber = SceneManager.sceneCountInBuildSettings - 1;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetMouseButtonDown(0))
+        if(_sceneNumber != 1)
         {
-            if(_sceneNumber < _maxSceneNumber)
+            if (Input.GetMouseButtonDown(0))
             {
-                _sceneNumber++;
-                SceneManager.LoadScene(_sceneNumber);
+                if (_sceneNumber < _maxSceneNumber)
+                {
+                    _sceneNumber++;
+                    SceneManager.LoadScene(_sceneNumber);
+                }
+                else if (_sceneNumber == _maxSceneNumber)
+                {
+                    _sceneNumber = 0;
+                    SceneManager.LoadScene(_sceneNumber);
+                }
             }
-            else if(_sceneNumber == _maxSceneNumber)
-            {
-                _sceneNumber = 0;
-                SceneManager.LoadScene(_sceneNumber);
-            }
+        }
+        //ƒS[ƒ‹Žž‚Ébool‚ð‚à‚ç‚Á‚Ä‚­‚é@’Ç‹Lkaribool‚ÍÁ‚µ‚Ä‚æ‚¢
+        if (kari)
+        {
+            kari = false;
+            _sceneNumber++;
+            SceneManager.LoadScene(_sceneNumber);
         }
     }
 }
