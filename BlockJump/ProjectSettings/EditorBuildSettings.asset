@@ -6,6 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    path: Assets/Member/itou/Scenes/karititlescene.unity
+    guid: 86094690189643647b313ede7f431371
+  - enabled: 1
+    path: Assets/Member/itou/Scenes/karimainscene.unity
+    guid: 7740ffc413178fe4ab784e52e1c452ef
+  - enabled: 1
+    path: Assets/Member/itou/Scenes/kariendscene.unity
+    guid: 1592d4ef3872cf34fb35376aee17e818
   m_configObjects: {}
