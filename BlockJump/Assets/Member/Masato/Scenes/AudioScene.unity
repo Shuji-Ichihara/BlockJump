@@ -216,6 +216,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2048030920}
+  - component: {fileID: 2048030921}
   m_Layer: 0
   m_Name: AudioTest
   m_TagString: Untagged
@@ -238,3 +239,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2048030921
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2048030919}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d0f59e404adff246872d42be05f864e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bgmAudioSource: {fileID: 0}
+  seAudioSource: {fileID: 0}
+  MasterVolume: 1
+  BGMVolume: 0.5
+  SEVolume: 1
+  bgmSoundDatas: []
+  seSoundDatas: []
