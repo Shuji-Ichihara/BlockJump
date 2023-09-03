@@ -36,9 +36,9 @@ public class Sceneseni : MonoBehaviour
             }
         }
         //ƒS[ƒ‹‚Ébool‚ğ‚à‚ç‚Á‚Ä‚­‚é@’Ç‹Lkaribool‚ÍÁ‚µ‚Ä‚æ‚¢
-        if (kari)
+        if (GameSceneManager.Instance != null && GameSceneManager.Instance.IsGoal == false)
         {
-            kari = false;
+            //kari = false;
             _sceneNumber++;
             SceneManager.LoadScene(_sceneNumber);
         }
