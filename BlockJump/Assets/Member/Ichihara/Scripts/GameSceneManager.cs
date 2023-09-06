@@ -14,6 +14,7 @@ public class GameSceneManager : SingletonMonoBehaviour<GameSceneManager>
     // Start is called before the first frame update
     void Start()
     {
+        _starCount = 0;
         _isGoal = false;
     }
 
