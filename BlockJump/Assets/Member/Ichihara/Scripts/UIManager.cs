@@ -51,6 +51,9 @@ public class UIManager : SingletonMonoBehaviour<UIManager>
         PreviewStarCount();
     }
 
+    /// <summary>
+    /// ブロックが獲得した星の数をテキスト表示する
+    /// </summary>
     private void PreviewStarCount()
     {
         _starCountupText.text = ": " + GameSceneManager.Instance.StarCount.ToString();
