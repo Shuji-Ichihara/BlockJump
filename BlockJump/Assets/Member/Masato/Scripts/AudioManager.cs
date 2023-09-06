@@ -111,24 +111,15 @@ public class SESoundData
 
 public enum SEName
 {
-    Count,
-    PushButton,
-    Finish,
-    Miss,
-    StartSentak,
-    Hanten,
-    Success,
-    SukillSE,
-    Wind,
-    Timer,
-    Denger,
+    Junp,
+    Wall,
+    Get,
+    Magma,   
 }
 
 public enum BGMName
 {
     Main,
     Title,
-    Street,
     End,
-
 }
