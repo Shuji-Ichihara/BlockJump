@@ -18,12 +18,6 @@ public class GameSceneManager : SingletonMonoBehaviour<GameSceneManager>
         _isGoal = false;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     /// <summary>
     /// プレイヤーがゴールにした時に呼び出す
     /// </summary>
