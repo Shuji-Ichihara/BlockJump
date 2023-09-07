@@ -7,8 +7,8 @@ public class Sceneseni : MonoBehaviour
 {
     private int _sceneNumber = 0;
     private int _maxSceneNumber;
-    [SerializeField]
-    bool kari = false;
+    //[SerializeField]
+    //bool kari = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -36,7 +36,7 @@ public class Sceneseni : MonoBehaviour
             }
         }
         //ƒS[ƒ‹‚Ébool‚ğ‚à‚ç‚Á‚Ä‚­‚é@’Ç‹Lkaribool‚ÍÁ‚µ‚Ä‚æ‚¢
-        if (GameSceneManager.Instance != null && GameSceneManager.Instance.IsGoal == false)
+        if (GameSceneManager.Instance != null && GameSceneManager.Instance.IsGoal == true)
         {
             //kari = false;
             _sceneNumber++;
