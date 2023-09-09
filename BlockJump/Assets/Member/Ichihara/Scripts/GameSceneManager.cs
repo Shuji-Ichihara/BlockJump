@@ -44,6 +44,7 @@ public class GameSceneManager : SingletonMonoBehaviour<GameSceneManager>
         _isGameOver = false;
         _isGoal = false;
     }
+    
 
     /// <summary>
     /// ゲームに必要なオブジェクト生成

@@ -3,7 +3,9 @@ using UnityEngine;
 
 public abstract class SingletonMonoBehaviour<T> : MonoBehaviour where T : MonoBehaviour
 {
+    [SerializeField]
     private static T instance;
+    [SerializeField]
     public static T Instance
     {
         get

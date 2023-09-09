@@ -21,7 +21,9 @@ public class star : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             playerController.starcount++;
-            Destroy(this.gameObject);
+            Destroy(this.gameObject);            
+            AudioManager.Instance.PlaySE(SEName.Get);
+            
         }
     }
 }
