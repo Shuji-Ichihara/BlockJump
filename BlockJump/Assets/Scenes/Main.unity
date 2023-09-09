@@ -175,7 +175,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 0.39486378, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -296,7 +296,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -2
   m_TargetDisplay: 0
 --- !u!224 &86610107
 RectTransform:
@@ -887,6 +887,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e967a412fc61bbd4cba1dea35d4d693a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _startPosition: {fileID: 0}
+  _goalPosition: {fileID: 0}
+  _starPosition: []
+  _player: {fileID: 0}
+  _goal: {fileID: 0}
+  _star: {fileID: 0}
+  _initStar: 0
 --- !u!4 &709954249
 Transform:
   m_ObjectHideFlags: 0
@@ -1210,7 +1217,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6936135858554112607, guid: b58ab8ef763a69847990e85a2582aef3, type: 3}
       propertyPath: m_SortingOrder
-      value: 0
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 6936135858698618350, guid: b58ab8ef763a69847990e85a2582aef3, type: 3}
       propertyPath: m_IsTrigger
