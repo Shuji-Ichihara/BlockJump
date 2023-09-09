@@ -50,7 +50,7 @@ public class GameSceneManager : SingletonMonoBehaviour<GameSceneManager>
     /// </summary>
     private void InitGame()
     {
-        Instantiate(_player, _startPosition);
+        _player = Instantiate(_player, _startPosition.position, Quaternion.identity);
         Instantiate(_goal, _goalPosition);
         // 事前に設定した座標にランダムに星を生成
         List<int> initStarCount = new List<int>();

@@ -49,8 +49,8 @@ public class UIManager : SingletonMonoBehaviour<UIManager>
         _playerStatusText.text = _status;
         _gameOverText.text = "GameOver";
         _gameOverText.color = Color.black;
-        _gameUICanvas.worldCamera = GameObject.Find("PlayerBlock").GetComponentInChildren<Camera>();
-        _resultUICanvas.worldCamera = GameObject.Find("PlayerBlock").GetComponentInChildren<Camera>();
+        _gameUICanvas.worldCamera = GameObject.Find(GameSceneManager.Instance.Player.name).GetComponentInChildren<Camera>();
+        _resultUICanvas.worldCamera = GameObject.Find(GameSceneManager.Instance.Player.name).GetComponentInChildren<Camera>();
         _gameUICanvas.gameObject.SetActive(true);
         _resultUICanvas.gameObject.SetActive(false);
     }
