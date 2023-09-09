@@ -4,28 +4,28 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-/// <summary>
-/// 現在のプレイヤーの状態
-/// </summary>
-public enum Status
-{
-    Blue,
-    Red,
-}
-
 public class UIManager : SingletonMonoBehaviour<UIManager>
 {
+    [SerializeField]
+    private Canvas _gameUICanvas = null;
+    [SerializeField]
+    private Canvas _resultUICanvas = null;
+
     // 取った星の数を表示
     [SerializeField]
     private TextMeshProUGUI _starCountupText = null;
     // ブロックのステータス案内を表示するテキスト
     [SerializeField]
     private TextMeshProUGUI _playerStatusText = null;
+    // ゲームオーバーのテキスト
+    [SerializeField]
+    private TextMeshProUGUI _gameOverText = null;
+
     [SerializeField]
     private string _status = "Status";
     // 現在のブロックの色を表示するイメージ画像
     [SerializeField]
-    private Image _playerStatus = null;
+    private Image _playerStatusImage = null;
 
     // Start is called before the first frame update
     void Start()
@@ -38,17 +38,32 @@ public class UIManager : SingletonMonoBehaviour<UIManager>
         {
             _playerStatusText = GameObject.Find("PlayerStatusText").GetComponent<TextMeshProUGUI>();
         }
-        if (_playerStatus == null)
+        if(_gameOverText == null)
         {
-            _playerStatus = GameObject.Find("Status").GetComponent<Image>();
+            _gameOverText = GameObject.Find("GameOverText").GetComponent<TextMeshProUGUI>();
+        }
+        if (_playerStatusImage == null)
+        {
+            _playerStatusImage = GameObject.Find("Status").GetComponent<Image>();
         }
         _playerStatusText.text = _status;
+        _gameOverText.text = "GameOver";
+        _gameOverText.color = Color.black;
+        _gameUICanvas.worldCamera = GameObject.Find(GameSceneManager.Instance.Player.name).GetComponentInChildren<Camera>();
+        _resultUICanvas.worldCamera = GameObject.Find(GameSceneManager.Instance.Player.name).GetComponentInChildren<Camera>();
+        _gameUICanvas.gameObject.SetActive(true);
+        _resultUICanvas.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
         PreviewStarCount();
+        if (GameSceneManager.Instance.IsGameOver == true || GameSceneManager.Instance.IsGoal == true)
+        {
+            _gameUICanvas.gameObject.SetActive(false);
+            _resultUICanvas.gameObject.SetActive(true);
+        }
     }
 
     /// <summary>
@@ -62,16 +77,20 @@ public class UIManager : SingletonMonoBehaviour<UIManager>
     /// <summary>
     /// プレイヤーのステータスを UI に反映する
     /// </summary>
-    /// <param name="status"></param>
-    public void PreviewPlayerStatus(Status status)
+    /// <param name="status">現在のプレイヤーのステータス</param>
+    public void PreviewPlayerStatus(PlayerStatus status)
     {
-        if(status == Status.Blue)
+        if (status == PlayerStatus.Blue)
         {
             // ここでプレイヤーの画像を取得する
+            PlayerController playerController= GameSceneManager.Instance.Player.GetComponent<PlayerController>();
+            _playerStatusImage.color = playerController.SpriteColor[(int)status];
         }
-        else if(status == Status.Red)
+        else if (status == PlayerStatus.Red)
         {
             // ここでプレイヤーの画像を取得する
+            PlayerController playerController = GameSceneManager.Instance.Player.GetComponent<PlayerController>();
+            _playerStatusImage.color = playerController.SpriteColor[(int)status];
         }
     }
 }
