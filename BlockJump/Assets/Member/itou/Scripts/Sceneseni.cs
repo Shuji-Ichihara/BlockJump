@@ -33,11 +33,13 @@ public class Sceneseni : MonoBehaviour
                 {
                     _sceneNumber = 0;
                     SceneManager.LoadScene(_sceneNumber);
+                    Destroy(this.gameObject);
                 }
                 else if (_sceneNumber == _maxSceneNumber)
                 {
                     _sceneNumber = 0;
                     SceneManager.LoadScene(_sceneNumber);
+                    Destroy(this.gameObject);
                 }
             }
         }
