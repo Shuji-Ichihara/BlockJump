@@ -4,15 +4,19 @@ using UnityEngine;
 
 public class Magma : MonoBehaviour
 {
+    [SerializeField]
+    private float magmaSpeed = 10.0f;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.position += new Vector3(0, 0.5f * Time.deltaTime, 0);
+        if (GameSceneManager.Instance.IsGameOver == true) { return; }
+        transform.position += new Vector3(0, magmaSpeed * Time.deltaTime, 0);
     }
 }
