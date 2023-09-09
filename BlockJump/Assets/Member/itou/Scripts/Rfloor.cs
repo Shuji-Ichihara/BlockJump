@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Magma : MonoBehaviour
+public class Rfloor : MonoBehaviour
 {
     private GameObject scenemane;
     private Sceneseni sceneseni;
+    public GameObject _player;
+    bool Blue = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,15 +19,19 @@ public class Magma : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position += new Vector3(0, 0.5f * Time.deltaTime, 0);
+        if (Blue)
+        {
+            if (_player.GetComponent<SpriteRenderer>().color == Color.blue)
+            {
+                sceneseni._sceneNumber = 4;
+                SceneManager.LoadScene("Gameover");
+            }
+            Blue = false;
+        }
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.CompareTag("Player"))
-        {
-            sceneseni._sceneNumber = 4;
-            SceneManager.LoadScene("Gameover");
-        }
+            Blue = true;
     }
 }

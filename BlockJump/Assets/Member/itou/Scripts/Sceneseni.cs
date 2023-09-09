@@ -5,7 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class Sceneseni : MonoBehaviour
 {
-    private int _sceneNumber = 0;
+    public int _sceneNumber = 0;
+    [SerializeField]
     private int _maxSceneNumber;
     //[SerializeField]
     //bool kari = false;
@@ -19,13 +20,18 @@ public class Sceneseni : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(_sceneNumber != 1)
+        if (_sceneNumber != 1 && _sceneNumber != 2)
         {
             if (Input.GetMouseButtonDown(0))
             {
-                if (_sceneNumber < _maxSceneNumber)
+                if (_sceneNumber < _maxSceneNumber - 1)
                 {
                     _sceneNumber++;
+                    SceneManager.LoadScene(_sceneNumber);
+                }
+                else if (_sceneNumber == _maxSceneNumber - 1)
+                {
+                    _sceneNumber = 0;
                     SceneManager.LoadScene(_sceneNumber);
                 }
                 else if (_sceneNumber == _maxSceneNumber)

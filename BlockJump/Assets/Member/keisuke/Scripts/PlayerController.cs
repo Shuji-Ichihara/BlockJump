@@ -6,6 +6,7 @@ public class PlayerController : MonoBehaviour
 {
     public float jumpForce = 5f; // ƒWƒƒƒ“ƒv—Í
     public float moveSpeed = 5f; // ˆÚ“®‘¬“x
+    public int starcount = 0;
 
     private Rigidbody2D rb;
 

@@ -26,6 +26,11 @@ public class GameSceneManager : SingletonMonoBehaviour<GameSceneManager>
         _isGoal = true;
     }
 
+    public void PlayerReachesGoals()
+    {
+        _isGoal = false;
+    }
+
     /// <summary>
     /// プレイヤーが星を取得した時に呼び出す
     /// </summary>

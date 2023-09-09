@@ -6,12 +6,18 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Member/itou/Scenes/karititlescene.unity
-    guid: 86094690189643647b313ede7f431371
+    path: Assets/Scenes/Title.unity
+    guid: b1377c718fce4ff41b86a591c9c4ebc0
   - enabled: 1
-    path: Assets/Member/itou/Scenes/karimainscene.unity
-    guid: 7740ffc413178fe4ab784e52e1c452ef
+    path: Assets/Scenes/Main.unity
+    guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/Member/itou/Scenes/kariendscene.unity
-    guid: 1592d4ef3872cf34fb35376aee17e818
+    path: Assets/Scenes/Main2.unity
+    guid: 1c1668fff7d680b4486717428b96ef46
+  - enabled: 1
+    path: Assets/Scenes/Result.unity
+    guid: 732366ae45c51184bb1b04c9b4440189
+  - enabled: 1
+    path: Assets/Scenes/Gameover.unity
+    guid: 5fb4650f3fa02e446a619aad2cf8d204
   m_configObjects: {}
